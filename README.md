@@ -32,7 +32,7 @@ It supports multiple user roles with distinct permissions:
 - **Backend**: PHP 8.2, Laravel 12.x  
 - **Frontend**: Blade, Bootstrap 5  
 - **Database**: MySQL  
-- **Authentication**: Laravel Auth  
+- **Authentication**: Customized Auth  
 - **File Storage**: Laravel Storage (for company logos)
 
 ---
