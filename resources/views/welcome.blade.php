@@ -51,7 +51,7 @@
                     @if(auth()->user()->role === 'admin')
                         <a href="{{ route('companies.index') }}" class="btn btn-light btn-lg me-2">Admin Dashboard</a>
                     @elseif(auth()->user()->role === 'company')
-                        <a href="{{ route('company.edit') }}" class="btn btn-light btn-lg me-2">Company Dashboard</a>
+                        <a href="{{ route('dashboard') }}" class="btn btn-light btn-lg me-2">Company Dashboard</a>
                     @elseif(auth()->user()->role === 'employee')
                         <a href="{{ route('employee.profile') }}" class="btn btn-light btn-lg me-2">Employee Dashboard</a>
                     @endif

@@ -32,7 +32,7 @@
                                 </li>
                             @elseif(auth()->user()->role === 'company')
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('company.edit') }}">Company Dashboard</a>
+                                    <a class="nav-link" href="{{ route('dashboard') }}">Company Dashboard</a>
                                 </li>
                             @elseif(auth()->user()->role === 'employee')
                                 <li class="nav-item">
