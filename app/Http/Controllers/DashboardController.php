@@ -17,7 +17,7 @@ class DashboardController extends Controller
         if ($user->role === 'admin') {
             $companies = Company::count();
             $employees = Employee::count();
-            return view('dashboard', compact('user', 'companies', 'employees'));
+            return view('dashboard', compact('user', 'companies','employees' ));
         }
 
         // Company: show company details & its employees

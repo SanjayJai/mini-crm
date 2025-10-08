@@ -11,26 +11,21 @@ use App\Models\Company;
 
 class CompanyController extends Controller
 {
-    // ----------------------------
-    // Admin: List all companies
-    // ----------------------------
+
+
     public function index()
     {
         $companies = Company::with('user')->paginate(10);
         return view('admin.companies.index', compact('companies'));
     }
 
-    // ----------------------------
-    // Admin: Show create form
-    // ----------------------------
     public function create()
     {
+        
         return view('admin.companies.create');
     }
 
-    // ----------------------------
-    // Admin: Store new company
-    // ----------------------------
+
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -57,17 +52,13 @@ class CompanyController extends Controller
         return redirect()->route('companies.index')->with('success', 'Company created successfully!');
     }
 
-    // ----------------------------
-    // Admin: Edit company
-    // ----------------------------
+ 
     public function edit(Company $company)
     {
         return view('admin.companies.edit', compact('company'));
     }
 
-    // ----------------------------
-    // Admin: Update company
-    // ----------------------------
+
     public function update(Request $request, Company $company)
     {
         $data = $request->validate([
@@ -103,9 +94,7 @@ class CompanyController extends Controller
         return redirect()->route('companies.index')->with('success', 'Company updated successfully!');
     }
 
-    // ----------------------------
-    // Admin: Delete company
-    // ----------------------------
+
     public function destroy(Company $company)
     {
         $user = $company->user;
@@ -115,9 +104,7 @@ class CompanyController extends Controller
         return redirect()->route('companies.index')->with('success', 'Company deleted successfully!');
     }
 
-    // ----------------------------
-    // Company: Edit own profile (logo & website)
-    // ----------------------------
+    
 public function editProfile()
 {
     $company = Auth::user()->company;
@@ -129,9 +116,7 @@ public function editProfile()
     return view('admin.companies.edit-profile', compact('company'));
 }
 
-    // ----------------------------
-    // Company: Update own profile
-    // ----------------------------
+ 
     public function updateProfile(Request $request)
     {
         $company = Auth::user()->company;
